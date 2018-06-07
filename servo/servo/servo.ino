@@ -4,7 +4,7 @@
 
 #include <Servo.h>
 Servo servo;
-int angle=90;
+int angle=200;
 
 void setup()
 {
@@ -30,7 +30,10 @@ void loop()
   Serial.print("cm");
   Serial.println();
   if (cm<7)
+  {
   servo.write(0);
+  delay(3000);//delay를 준다.
+  }
   else
   servo.write(angle);
   delay(300); // 0.3초 대기 후 다시 측정
